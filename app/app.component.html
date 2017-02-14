@@ -5,7 +5,10 @@
 
 <main>
   <section class='todo-list' *ngIf="todos.length">
-
+    <div class="todo-from">
+      <input type="text" placeholder="Что нужно сделать ?" (submit)='create()' #TitleInput>
+      <button type="submit">Добавить</button>
+    </div>
     <div class='todo-item' *ngFor="let todo of todos" [class.completed]="todo.completed">
       <button class="checkbox icon" (click)="toggle(todo)">
         <i class="material-icons"> {{ todo.completed ? 'check_box' : 'check_box_outline_blank' }} </i>
