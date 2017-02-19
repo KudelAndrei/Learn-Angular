@@ -8,17 +8,6 @@ import { todos } from '../shared/data';
   templateUrl: 'todo-list.component.html',
 })
 export class TodoListComponent {
-
   todos: Todo[] = todos;
 
-  toggle(todo: Todo){
-    todo.completed = !todo.completed;
-  }
-
-  delete(todo: Todo){
-    let index = this.todos.indexOf(todo);
-    if (index > -1){
-      this.todos.splice(index, 1);
-    }   
-  }
 }

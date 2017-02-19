@@ -10,8 +10,6 @@ export class TodoFormComponent {
   newTodoTitle: string = " ";
 
   create(){
-    
   }
-
   
 }
