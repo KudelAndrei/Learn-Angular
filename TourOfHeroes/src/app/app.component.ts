@@ -1,21 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from './shared/Hero';
-import { HEROES } from './shared/data';
+import { HeroDetalComponent } from './hero-detal/hero-detal.component';
+import { HeroService } from './services/hero.services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css', './style.css']
+  styleUrls: ['./app.component.css', './style.css'],
+  providers: [HeroService]
 })
-export class AppComponent {
-  title = 'Kudel';
+export class AppComponent implements OnInit {
+  title = 'ToureOfHeroes';
 
-  heroes = HEROES;
+  heroes: Hero[];
   selectHero: Hero;
 
-  onSelectHero(hero: Hero): void{
+  constructor(private heroService: HeroService) { }
+
+  ngOnInit(): void {
+	  this.getHeroes();
+	}
+
+  getHeroes(): void {
+	  this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+	}
+
+	onSelectHero(hero: Hero): void{
   	this.selectHero = hero;
-  	console.log(hero);
   }
 
 }

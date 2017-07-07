@@ -8,7 +8,7 @@
 .logo img {
 	max-width: 100%;
 }
-.wrap {
+.page1 {
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -16,14 +16,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-}
-.card .card-title {
-	margin: 0;
-  padding: 10px;
-  text-transform: uppercase;
-}
-.card .card-id {
-	padding: 10px 24px 5px;
 }
 .collection {
 	display: -webkit-flex;

@@ -1,0 +1,8 @@
+<div *ngIf="hero" class="card">
+  <h2 class="card-title indigo accent-2 white-text">{{hero.name}} details!</h2>
+  <div class="card-content card-id"><label>id: </label>{{hero.id}}</div>
+  <div class="card-content">
+      <label>name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+  </div>
+</div>
