@@ -1,0 +1,38 @@
+.logo {
+	width: 60px;
+	display: inline-block;
+	height: 60px;
+	margin-left: 20px;
+	border-radius: 50%;
+}
+.logo img {
+	max-width: 100%;
+}
+.wrap {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.card .card-title {
+	margin: 0;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.card .card-id {
+	padding: 10px 24px 5px;
+}
+.collection {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+}
+.collection-item.selected {
+	background-color: #f5f5f5;
+}
