@@ -1,0 +1,6 @@
+<ul class="collection with-header">
+  <li *ngFor="let hero of heroes" class="collection-item waves-effect waves-darck" (click)="onSelectHero(hero)" [class.selected]="hero == selectedHero">
+    <span>id = {{hero.id}}</span> <strong class="title"> Name = {{hero.name}}</strong>
+  </li>
+</ul>
+<app-hero-detal [hero]="selectHero"></app-hero-detal> 

@@ -1,27 +1,8 @@
-<nav class="nav-extended indigo accent-3">
-  <div class="nav-wrapper">
-    <a href="#" class="logo waves-effect waves-light"><img src="../assets/images/angular.svg" alt=""></a>
-    <h2>{{title}}}</h2>
-  </div>
-</nav>
-<div class="nav-content  indigo accent-2">
-  <ul class="tabs tabs-transparent">
-    <li class="tab"><a class="active waves-effect waves-light" href="#test1">Список героев</a></li>
-    <li class="tab"><a class="waves-effect waves-light" href="#test2">Test 2</a></li>
-    <li class="tab"><a class="waves-effect waves-light" href="#test4">Test 4</a></li>
-  </ul>
-</div>
+<app-dashboard>loading</app-dashboard>
+
 <div class="container">
   <div class="wrap">
-    <div class="page1" id="test1">
-      <ul class="collection with-header">
-        <li *ngFor="let hero of heroes" class="collection-item waves-effect waves-darck" (click)="onSelectHero(hero)" [class.selected]="hero == selectedHero">
-          <span>id = {{hero.id}}</span> <strong class="title"> Name = {{hero.name}}</strong>
-        </li>
-      </ul>
-    
-      <app-hero-detal [hero]="selectHero">loading...</app-hero-detal>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
 
