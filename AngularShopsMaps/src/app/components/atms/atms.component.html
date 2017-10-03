@@ -1,5 +1,5 @@
 <a class="list-item" href="/" *ngFor="let atm of ATMS">	
-	<div class="list-item__img" style='background-image: url("../../../assets/img/atms/2.jpg");'></div>	
+	<div class="list-item__img" [ngStyle]="{'background': 'url('+atm?.url+') center / cover'}"></div>	
 	<div class="list-item__text">
 		<h3 class="list-item__head">{{atm.name}}</h3>
 		<p class="list-item__desc">{{atm.desc}}</p>

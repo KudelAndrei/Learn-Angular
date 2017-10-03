@@ -9,6 +9,8 @@ import { RouterModule }   from '@angular/router';
 import { ShopsComponent } from './components/shops/shops.component';
 import { AtmsComponent } from './components/atms/atms.component';
 import { AgmCoreModule } from '@agm/core';
+import { HttpModule } from '@angular/http';
+import { HttpService } from './services/http.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { AgmCoreModule } from '@agm/core';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCYCpa5JVN6ul4bzY1h2-lz6X5Kw7kQyHg'
     }),
@@ -34,7 +37,7 @@ import { AgmCoreModule } from '@agm/core';
     },
   ])
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
