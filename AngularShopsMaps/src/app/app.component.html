@@ -1,8 +1,12 @@
 <header class="header">
-  <app-navigation></app-navigation>
+	<app-navigation></app-navigation>
 </header>
 <section class="content">
-	<div class="content__map">map</div>
+	<div class="content__map">
+		<agm-map [latitude]="lat" [longitude]="lng">
+			<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+		</agm-map>
+	</div>
 	<div class="content__list">
 		<router-outlet></router-outlet>
 	</div>

@@ -1,7 +1,8 @@
-<div class="shop__item">	
-	<div class="shop__img"><img src="../../../assets/img/shops/1.jpg" alt="img"></div>	
-	<div class="shop__text">
-		<h3 class="shop__head">Название Магазина</h3>
-		<p class="shop__adress">г. Минск, ул. Ленина 189, кв.20</p>
+<a *ngFor='let shop of SHOPS' class="list-item" href="/">	
+	<div class="list-item__img" style='background-image: url("../../../assets/img/shops/1.jpg");'></div>	
+	<div class="list-item__text">
+		<h3 class="list-item__head">{{shop.name}}</h3>
+		<p class="list-item__desc">{{shop.desc}}</p>
+		<p class="list-item__adress">{{shop.adress}}</p>
 	</div>
-</div>
+</a>

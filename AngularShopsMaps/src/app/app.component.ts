@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   logo = 'AngularShopsMap';
+
+  lat: number = 51.678418;
+  lng: number = 7.809007;
 }

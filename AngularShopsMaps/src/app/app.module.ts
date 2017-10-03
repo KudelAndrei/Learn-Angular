@@ -8,6 +8,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule }   from '@angular/router';
 import { ShopsComponent } from './components/shops/shops.component';
 import { AtmsComponent } from './components/atms/atms.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,9 @@ import { AtmsComponent } from './components/atms/atms.component';
   ],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCYCpa5JVN6ul4bzY1h2-lz6X5Kw7kQyHg'
+    }),
     RouterModule.forRoot([
     {
       path: 'shops',
