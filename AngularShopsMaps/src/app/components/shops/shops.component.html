@@ -1,7 +1,14 @@
 <section class="content">
 	<div class="content__map">
-		<agm-map [latitude]="lat" [longitude]="lng" [zoom]='10'>
+		<agm-map [latitude]="lat" [longitude]="lng" [zoom]='zoom'>
 			<agm-marker *ngFor='let shop of shops' [latitude]="shop.location.lat" [longitude]="shop.location.lng">
+				<agm-info-window [maxWidth]="300">
+					<h4 class="content__map-head">{{shop.name}}</h4>
+					<div class="content__map-img">
+						<img src="{{shop?.url}}" alt="{{shop.name}}">
+					</div>
+					<p class="content__map-address">{{shop?.address}}</p>
+				</agm-info-window>
 			</agm-marker>
 		</agm-map>
 	</div>

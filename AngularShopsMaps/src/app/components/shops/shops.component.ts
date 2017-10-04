@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 export class ShopsComponent implements OnInit {
   lat: number = 53.9;
   lng: number = 27.6;
+  zoom: number = 10;
 
   constructor(private http: HttpService) { }
 
