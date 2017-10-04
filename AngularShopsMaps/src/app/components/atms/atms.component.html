@@ -1,8 +1,8 @@
-<a class="list-item" href="/" *ngFor="let atm of ATMS">	
+<a class="list-item" href="/" *ngFor='let atm of atms'>	
 	<div class="list-item__img" [ngStyle]="{'background': 'url('+atm?.url+') center / cover'}"></div>	
 	<div class="list-item__text">
 		<h3 class="list-item__head">{{atm.name}}</h3>
 		<p class="list-item__desc">{{atm.desc}}</p>
-		<p class="list-item__adress">{{atm.adress}}}</p>
+		<p class="list-item__adress">{{atm.address}}}</p>
 	</div>
 </a>

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-//import { ShopsService } from '../../services/shops.services';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import 'rxjs/add/operator/map';
 
@@ -10,12 +9,12 @@ import 'rxjs/add/operator/map';
   providers: [HttpService]
 })
 export class ShopsComponent implements OnInit {
+  lat: number = 53.9;
+  lng: number = 27.6;
 
   constructor(private http: HttpService) { }
 
-  //@Input() shops;
-
-  jsonShops = '../../../assets/img/shops.json';
+  jsonShops = '../../../assets/data/shops.json';
   shops = [];
 
   ngOnInit() {
@@ -27,49 +26,4 @@ export class ShopsComponent implements OnInit {
         );
   }
 
-  // SHOPS = [
-  // 	{
-    // 		url: "../../../assets/img/shops/1.jpg",
-    // 		name: "Магазин такой то 1",
-    // 		desc: "Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.",
-    // 		adress: "г. Минск, ул. Ленина 189, кв.20"
-    // 	},
-    // 	{
-      // 		url: "../../../assets/img/shops/2.jpg",
-      // 		name: "Магазин такой то 2",
-      // 		desc: "Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.",
-      // 		adress: "г. Минск, ул. Ленина 189, кв.23"
-      // 	},
-      // 	{
-        // 		url: "../../../assets/img/shops/3.jpg",
-        // 		name: "Магазин такой то 3",
-        // 		desc: "Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.",
-        // 		adress: "г. Минск, ул. Ленина 189, кв.30"
-        // 	},
-        // 	{
-          // 		url: "../../../assets/img/shops/4.jpg",
-          // 		name: "Магазин такой то 4",
-          // 		desc: "Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.",
-          // 		adress: "г. Минск, ул. Ленина 189, кв.4"
-          // 	},
-          // 	{
-            // 		url: "../../../assets/img/shops/1.jpg",
-            // 		name: "Магазин такой то 5",
-            // 		desc: "Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.",
-            // 		adress: "г. Минск, ул. Ленина 189, кв.90"
-            // 	},
-            // 	{
-              // 		url: "../../../assets/img/shops/2.jpg",
-              // 		name: "Магазин такой то 6",
-              // 		desc: "Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.",
-              // 		adress: "г. Минск, ул. Ленина 189, кв.70"
-              // 	},
-              // 	{
-                // 		url: "../../../assets/img/shops/3.jpg",
-                // 		name: "Магазин такой то 7",
-                // 		desc: "Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.",
-                // 		adress: "г. Минск, ул. Ленина 189, кв.26"
-                // 	}
-                // ]
-
-              }
+}

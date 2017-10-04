@@ -1,8 +1,18 @@
-<a *ngFor='let shop of shops' class="list-item" href="/">	
-	<div class="list-item__img" [ngStyle]="{'background': 'url('+shop?.url+') center / cover'}"></div>	
-	<div class="list-item__text">
-		<h3 class="list-item__head">{{shop.name}}</h3>
-		<p class="list-item__desc">{{shop.desc}}</p>
-		<p class="list-item__adress">{{shop.adress}}</p>
+<section class="content">
+	<div class="content__map">
+		<agm-map [latitude]="lat" [longitude]="lng" [zoom]='10'>
+			<agm-marker *ngFor='let shop of shops' [latitude]="shop.location.lat" [longitude]="shop.location.lng">
+			</agm-marker>
+		</agm-map>
 	</div>
-</a>
+	<div class="content__list">
+		<a class="list-item" href="/" *ngFor='let shop of shops'>	
+			<div class="list-item__img" [ngStyle]="{'background': 'url('+shop?.url+') center / cover'}"></div>	
+			<div class="list-item__text">
+				<h3 class="list-item__head">{{shop.name}}</h3>
+				<p class="list-item__desc">{{shop.desc}}</p>
+				<p class="list-item__adress">{{shop.address}}</p>
+			</div>
+		</a>
+	</div>
+</section>
