@@ -11,6 +11,7 @@ import { AtmsComponent } from './components/atms/atms.component';
 import { AgmCoreModule } from '@agm/core';
 import { HttpModule } from '@angular/http';
 import { HttpService } from './services/http.service';
+//import { DirectionsMapDirective } from './directives/geo.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpService } from './services/http.service';
     NavigationComponent,
     MenuComponent,
     ShopsComponent,
-    AtmsComponent
+    AtmsComponent,
+    //DirectionsMapDirective
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import 'rxjs/add/operator/map';
+//import { DirectionsMapDirective } from '../../directives/geo.directive';
 
 @Component({
   selector: 'app-shops',
