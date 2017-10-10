@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import 'rxjs/add/operator/map';
-//import { DirectionsMapDirective } from '../../directives/geo.directive';
 
 @Component({
   selector: 'app-shops',
@@ -10,14 +9,12 @@ import 'rxjs/add/operator/map';
   providers: [HttpService]
 })
 export class ShopsComponent implements OnInit {
-  lat: number = 53.9;
-  lng: number = 27.6;
-  zoom: number = 10;
-
-  constructor(private http: HttpService) { }
-
+  lat: number;
+  lng: number;
   jsonShops = '../../../assets/data/shops.json';
   shops = [];
+
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
     this.http.get(this.jsonShops)
@@ -26,6 +23,16 @@ export class ShopsComponent implements OnInit {
         data => this.shops = data,
         error => console.log(error)
         );
+    this.getUserLocation();
+  }
+
+  private getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
+    }
   }
 
 }

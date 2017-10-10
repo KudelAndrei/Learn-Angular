@@ -1,7 +1,11 @@
 <section class="content">
 	<div class="content__map">
-		<agm-map [latitude]="lat" [longitude]="lng" [zoom]='zoom'>
-			<!-- <agm-google-map-directions [origin]="origin" [destination]="destination" [waypoints]="waypoints"></agm-google-map-directions> -->
+		<agm-map [latitude]="lat" [longitude]="lng">
+			<agm-marker [latitude]="lat" [longitude]="lng">
+				<agm-info-window>
+					<h4 class="content__map-head">Вы тут!</h4>
+				</agm-info-window>
+			</agm-marker>
 			<agm-marker *ngFor='let shop of shops' [latitude]="shop.location.lat" [longitude]="shop.location.lng">
 				<agm-info-window [maxWidth]="300">
 					<h4 class="content__map-head">{{shop.name}}</h4>
