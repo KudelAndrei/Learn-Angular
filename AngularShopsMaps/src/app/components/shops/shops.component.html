@@ -1,7 +1,7 @@
 <section class="content">
 	<div class="content__map">
-		<agm-map [latitude]="lat" [longitude]="lng">
-			<agm-marker [latitude]="lat" [longitude]="lng">
+		<agm-map [latitude]="origin?.latitude" [longitude]="origin?.longitude">
+			<agm-marker [latitude]="origin?.latitude" [longitude]="origin?.longitude">
 				<agm-info-window>
 					<h4 class="content__map-head">Вы тут!</h4>
 				</agm-info-window>
@@ -15,16 +15,21 @@
 					<p class="content__map-address">{{shop?.address}}</p>
 				</agm-info-window>
 			</agm-marker>
+
+			<agm-map-directions  [origin]="origin" [destination]="destination" #test></agm-map-directions>
+
 		</agm-map>
 	</div>
 	<div class="content__list">
-		<a class="list-item" href="/" *ngFor='let shop of shops'>	
-			<div class="list-item__img" [ngStyle]="{'background': 'url('+shop?.url+') center / cover'}"></div>	
+		<div class="list-item" *ngFor='let shop of shops'>	
+			<div class="list-item__img" [ngStyle]="{'background': 'url('+shop?.url+') center / cover'}">
+				<img src="../../../assets/img/route.png">
+			</div>	
 			<div class="list-item__text">
-				<h3 class="list-item__head">{{shop.name}}</h3>
+				<h3 class="list-item__head" (click)="getRoute(shop)">{{shop.name}}</h3>
 				<p class="list-item__desc">{{shop.desc}}</p>
 				<p class="list-item__adress">{{shop.address}}</p>
 			</div>
-		</a>
+		</div>
 	</div>
 </section>
