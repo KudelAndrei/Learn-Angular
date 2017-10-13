@@ -7,7 +7,6 @@ import { MenuComponent } from './components/menu/menu.component';
 
 import { RouterModule }   from '@angular/router';
 import { ShopsComponent } from './components/shops/shops.component';
-import { AtmsComponent } from './components/atms/atms.component';
 import { AgmCoreModule } from '@agm/core';
 import { HttpModule } from '@angular/http';
 import { APP_ROUTER } from './app.router';
@@ -21,7 +20,6 @@ import { ShopDescriptionComponent } from './components/shopdescription/shopdescr
     NavigationComponent,
     MenuComponent,
     ShopsComponent,
-    AtmsComponent,
     DirectionsMapDirective,
     ShopDescriptionComponent
   ],

@@ -6,7 +6,7 @@
             <agm-map [latitude]="shop.location.lat" [longitude]="shop.location.lng" [zoom]='11'>
                 <agm-marker [latitude]="shop.location.lat" [longitude]="shop.location.lng">
                     <agm-info-window>
-                        <h4 class="content__map-head">Вы тут!</h4>
+                        <h4 class="content__map-head">{{shop?.name}}</h4>
                     </agm-info-window>
                 </agm-marker>
             </agm-map>

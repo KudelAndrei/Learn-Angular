@@ -31,24 +31,25 @@ body
 
 
 .list-item
+	position: relative
 	display: flex
 	background-color: #fff
 	border-radius: 4px
 	box-shadow: 0 2px 2px rgba(10,16,20,.24), 0 0 2px rgba(10,16,20,.12)
 	box-sizing: border-box
 	transition: box-shadow .5s
-	margin:  0 8px 24px
-	position: relative
+	margin:  0 20px 20px
 	color: #333
 	min-width: 400px
+	overflow: hidden
 	&:hover
 		box-shadow: 0 8px 8px rgba(10,16,20,.24), 0 0 8px rgba(10,16,20,.12)
 		text-decoration: none
 		.list-item__head
 			color: #1976d2
-		.list-item__adress
-			color: #1976d2
-			background-color: #e8f1fa
+			cursor: pointer
+		.list-item__travel
+			bottom: 0
 	.list-item__text
 		display: flex
 		flex-direction: column
@@ -75,3 +76,23 @@ body
 		margin-bottom: 0
 		font-size: 14px
 		padding: 10px 5px 10px 5px
+	.list-item__travel
+		content: ""
+		position: absolute
+		display: flex
+		width: 100%
+		background-color: #fff
+		bottom: -100%
+		text-align: center
+		justify-content: space-around
+		transition: all 0.3s ease
+		border-top: .5px solid #dbdbdb
+		.list-item__driving, .list-item__walking
+			padding: 5px
+			flex: 1 1 auto
+			transition: all 0.2s ease
+			cursor: pointer
+			&:hover
+				background-color: #f9f9f9
+				i
+					color: #1976d2

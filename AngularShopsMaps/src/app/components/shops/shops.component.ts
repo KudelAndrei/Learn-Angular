@@ -16,6 +16,7 @@ export class ShopsComponent implements OnInit {
 
 	origin: any;
 	destination: any;
+	travel: any;
 	jsonShops = '../../../assets/data/shops.json';
 	shops = [];
 	url = window.location.pathname;
@@ -58,7 +59,10 @@ export class ShopsComponent implements OnInit {
 			"longitude": marker.location.lng
 		};
 		this.destination = location;
-		// console.log(this.destination);
+	}
+
+	getTravel(travel){
+		this.travel = travel;
 	}
 
 	clickShop(shop){

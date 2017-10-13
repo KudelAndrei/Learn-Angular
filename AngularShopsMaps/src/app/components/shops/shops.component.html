@@ -12,23 +12,25 @@
 			<agm-marker *ngFor='let shop of shops' [latitude]="shop.location.lat" [longitude]="shop.location.lng">
 				<agm-info-window [maxWidth]="300">
 					<h4 class="content__map-head">{{shop.name}}</h4>
-					<div class="content__map-img">
+					<!-- <div class="content__map-img">
 						<img src="{{shop?.url}}" alt="{{shop.name}}">
-					</div>
-					<p class="content__map-address" (click)="getRoute(shop)">{{shop?.address}}</p>
+					</div> -->
+					<p class="content__map-address">{{shop?.address}}</p>
 				</agm-info-window>
 
 			</agm-marker>
 
-			<agm-map-directions  [origin]="origin" [destination]="destination" #test></agm-map-directions>
+			<agm-map-directions  [origin]="origin" [destination]="destination" [travel]="travel" #test></agm-map-directions>
 
 		</agm-map>
 	</div>
 
 	<div class="content__list">
 		<div class="list-item" *ngFor='let shop of shops'>	
-			<div class="list-item__img" [ngStyle]="{'background': 'url('+shop?.url+') center / cover'}">
-				<img src="../../../assets/img/route.png">
+			<div class="list-item__img" [ngStyle]="{'background': 'url('+shop?.logo+') center / cover'}">
+				<div class="list-item__travel">
+					<div class="list-item__driving" (click)="getRoute(shop)"><i class="material-icons">near_me</i></div>
+				</div>
 			</div>	
 			<div class="list-item__text">
 				<h3 class="list-item__head" (click)="clickShop(shop)">{{shop.name}}</h3>
@@ -38,4 +40,15 @@
 		</div>
 	</div>
 
+</section>
+
+<section id="setpanel" class="setpanel">
+	<div class="setpanel__travel">
+		<div class="setpanel__travel-icon" (click)="getTravel('DRIVING')"><i class="material-icons">directions_car</i>
+			<p>На автомобиле</p>
+		</div>
+		<div class="setpanel__travel-icon" (click)="getTravel('WALKING')"><i class="material-icons">directions_walk</i>
+			<p>Пешком</p>
+		</div>
+	</div>
 </section>

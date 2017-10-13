@@ -1,10 +1,14 @@
 .content
+	position: relative
 	display: flex
 	height: calc(100vh - 80px)
 	min-height: 300px
 	padding: 0 10px 10px 10px
 	.content__map
-		flex: 1 1 70%
+		flex: 1 1 50%
+		border-radius: 5px
+		overflow: hidden
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3)
 		.content__map-img
 			>img
 				max-width: 100%
@@ -27,17 +31,55 @@
 				transform: translate(-50%, -50%)
 				max-width: 50px
 				z-index: 2
-			// &::before
-			// 	content: ""
-			// 	position: absolute
-			// 	width: 70px
-			// 	height: 70px
-			// 	top: 50%
-			// 	left: 50%
-			// 	transform: translate(-50%, -50%)
-			// 	background-color: #1976d2
-			// 	border-radius: 50%
-
 
 agm-map
 	height: 100%
+
+.setpanel
+	position: relative
+	box-sizing: border-box
+	max-width: 100%
+	margin: 10px 10px 20px
+	background-color: #fff
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.3)
+	display: none
+	.setpanel__down
+		position: absolute
+		top: 14px
+		right: 14px
+		width: 50px
+		height: 50px
+		background-color: #fff
+		border-radius: 50%
+		cursor: pointer
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.3)
+		transition: all 0.2s ease
+		&:hover
+			transform: scale(1.1)
+		&::before
+			position: absolute
+			content: ""
+			width: 30px
+			height: 4px
+			background-color: #777
+			border-radius: 5px
+			top: 30px
+			left: 10px
+	.setpanel__travel
+		display: flex
+		text-align: center
+		width: 100%
+		margin-bottom: -10px
+		.setpanel__travel-icon
+			flex: 1 1 auto
+			padding: 5px
+			cursor: pointer
+			transition: all 0.3s ease
+			>p
+				margin: 0
+			>i
+				margin-top: 10px
+			&:hover
+				background-color: #f9f9f9
+				color: #1976d2
+
