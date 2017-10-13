@@ -50,7 +50,6 @@ export class DirectionsMapDirective {
       var directionsService = new google.maps.DirectionsService;
       var directionsDisplay = this._directionsDisplay
 
-     // console.log(this.origin.latitude, this.origin.longitude);
       directionsService.route({
         origin: {lat: this._origin.latitude, lng: this._origin.longitude},
         destination: {lat: this._destination.latitude, lng: this._destination.longitude},

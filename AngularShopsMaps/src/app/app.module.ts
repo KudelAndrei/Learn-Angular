@@ -10,8 +10,10 @@ import { ShopsComponent } from './components/shops/shops.component';
 import { AtmsComponent } from './components/atms/atms.component';
 import { AgmCoreModule } from '@agm/core';
 import { HttpModule } from '@angular/http';
+import { APP_ROUTER } from './app.router';
 import { HttpService } from './services/http.service';
 import { DirectionsMapDirective } from './services/directions.directive';
+import { ShopDescriptionComponent } from './components/shopdescription/shopdescription.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { DirectionsMapDirective } from './services/directions.directive';
     MenuComponent,
     ShopsComponent,
     AtmsComponent,
-    DirectionsMapDirective
+    DirectionsMapDirective,
+    ShopDescriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -28,16 +31,7 @@ import { DirectionsMapDirective } from './services/directions.directive';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCYCpa5JVN6ul4bzY1h2-lz6X5Kw7kQyHg'
     }),
-    RouterModule.forRoot([
-    {
-      path: 'shops',
-      component: ShopsComponent
-    }, 
-    {
-      path: 'atm',
-      component: AtmsComponent
-    },
-  ])
+    APP_ROUTER,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

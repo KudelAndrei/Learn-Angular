@@ -1,0 +1,60 @@
+<div class="content">
+    <div class="shops" *ngFor="let shop of shopeDescr">
+        <a routerLink="/shops" class="shops__close"></a>
+        <div class="shops__wrap">
+            <div class="shops__img" *ngIf='shop?.url' [ngStyle]="{'background': 'url('+shop?.url+') center / cover'}"></div>
+            <agm-map [latitude]="shop.location.lat" [longitude]="shop.location.lng" [zoom]='11'>
+                <agm-marker [latitude]="shop.location.lat" [longitude]="shop.location.lng">
+                    <agm-info-window>
+                        <h4 class="content__map-head">Вы тут!</h4>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </div>
+        <div class="shops__wrap shops__content">
+            <div class="shops__logo"><img src="{{shop?.logo}}" alt="{{shop?.name}}"></div>
+            <div class="shops__wrap shops__wrap--column">
+                <h2 class="shops__head">{{shop?.name}}</h2>
+                <p class="shops__desc">{{shop?.desc}}</p>
+                <p class="shops__desc">{{shop?.address}}</p>
+                <a href="https://{{shop?.web}}" class="shops__link" target="_blank">{{shop?.web}}</a>
+            </div>
+        </div>
+        <div class="shops__schedule shops__wrap shops__content shops__wrap--column">
+            <h4 >Рассписание</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Понедельник</td>
+                        <td>{{shop.schedule.su}}</td>
+                    </tr>
+                    <tr>
+                        <td>Вторник</td>
+                        <td>{{shop?.schedule.mo}}</td>
+                    </tr>
+                    <tr>
+                        <td>Среда</td>
+                        <td>{{shop?.schedule.tu}}</td>
+                    </tr>
+                    <tr>
+                        <td>Четверг</td>
+                        <td>{{shop?.schedule.we}}</td>
+                    </tr>
+                    <tr>
+                        <td>Пятница</td>
+                        <td>{{shop?.schedule.th}}</td>
+                    </tr>
+                    <tr>
+                        <td>Суббота</td>
+                        <td>{{shop?.schedule.fr}}</td>
+                    </tr>
+                    <tr>
+                        <td>Воскресенье</td>
+                        <td>{{shop?.schedule.sa}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
