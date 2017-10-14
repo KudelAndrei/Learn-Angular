@@ -20,15 +20,16 @@ export class ShopsComponent implements OnInit {
 	jsonShops = '../../../assets/data/shops.json';
 	shops = [];
 	url = window.location.pathname;
+	myMarker = '../../../assets/img/mymarker.png';
+	shopMarker = '../../../assets/img/shopmarker.png';
+	atmMarker = '../../../assets/img/atmmarker.png';
 
 	constructor(private http: HttpService, private router: Router) { 
 		this.getUserLocation();
 	}
 
 	ngOnInit() {
-		if (this.url == '/atms'){
-			this.loadData('atm');
-		} else this.loadData('shop');
+		this.url == '/atms'? this.loadData('atm'): this.loadData('shop');
 	}
 
 	loadData(type){
@@ -67,6 +68,11 @@ export class ShopsComponent implements OnInit {
 
 	clickShop(shop){
 		this.router.navigate(['shops', shop.id]);
+	}
+
+	markerUrl(shop){
+		console.log(this.shops);
+		return shop.type == 'shop'? this.shopMarker : this.atmMarker;
 	}
 
 }

@@ -38,42 +38,39 @@ export class DirectionsMapDirective {
 
 	constructor (private gmapsApi: GoogleMapsAPIWrapper) {  }
 
-	ngOnInit(){
-		// this.gmapsApi.getNativeMap().then(map => {
-		//   this._directionsDisplay = new google.maps.DirectionsRenderer;
-		//   this._directionsDisplay.setMap(map);
-		//   this._isLoad = true;
-		// });
-	}
+	ngOnInit(){	}
 
-	callback(response, status) {
-  if (status == 'OK') {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-    var directionsDisplay = this._directionsDisplay;
+	// callback(response, status) {
+ //  if (status == 'OK') {
+ //    var origins = response.originAddresses;
+ //    var destinations = response.destinationAddresses;
+ //    var directionsDisplay = this._directionsDisplay;
 
-    // directionsDisplay.setDirections(response);
+ //    directionsDisplay.setDirections(response);
 
-   //  for (var i = 0; i < origins.length; i++) {
-   //    var results = response.rows[i].elements;
-   //    for (var j = 0; j < results.length; j++) {
-   //      var element = results[j];
-   //      var distance = element.distance.text;
-   //      var duration = element.duration.text;
-   //      var from = origins[i];
-   //      var to = destinations[j];
-	  //     }
-	  //   }
-	  }
-	}
+ //    for (var i = 0; i < origins.length; i++) {
+ //      var results = response.rows[i].elements;
+ //      for (var j = 0; j < results.length; j++) {
+ //        var element = results[j];
+ //        var distance = element.distance.text;
+ //        var duration = element.duration.text;
+ //        var from = origins[i];
+ //        var to = destinations[j];
+	//       }
+	//     }
+	//   }
+	// }
 
 	OnRoute(){
 		this.gmapsApi.getNativeMap().then(map => {
 			if (!this._isLoad){
+				var options = {
+					map: map,
+					suppressMarkers: true
+				}
 				this._serviceDistace = new google.maps.DistanceMatrixService();
-				this._directionsDisplay = new google.maps.DirectionsRenderer;
-				// this._directionsDisplay = new google.maps.DirectionsRenderer;
-				this._directionsDisplay.setMap(map);
+				this._directionsDisplay = new google.maps.DirectionsRenderer(options);
+				// this._directionsDisplay.setMap(map);
 				this._isLoad = true;
 			}
 
@@ -103,17 +100,17 @@ export class DirectionsMapDirective {
 				}
 			});
 
-			this._serviceDistace.getDistanceMatrix(
-			{
-				origins: [originA],
-				destinations: [desctinationA],
-				travelMode: this._travel? this._travel : "DRIVING",
-				// transitOptions: TransitOptions,
-				// drivingOptions: DrivingOptions,
-				// unitSystem: UnitSystem,
-				avoidHighways: true,
-				avoidTolls: false,
-			}, this.callback);
+			// this._serviceDistace.getDistanceMatrix(
+			// {
+			// 	origins: [originA],
+			// 	destinations: [desctinationA],
+			// 	travelMode: this._travel? this._travel : "DRIVING",
+			// 	// transitOptions: TransitOptions,
+			// 	// drivingOptions: DrivingOptions,
+			// 	// unitSystem: UnitSystem,
+			// 	avoidHighways: true,
+			// 	avoidTolls: false,
+			// }, this.callback);
 
 		});
 	}

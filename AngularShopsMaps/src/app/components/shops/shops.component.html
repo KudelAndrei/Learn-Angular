@@ -1,15 +1,15 @@
 <section class="content">
 
 	<div class="content__map">
-		<agm-map [latitude]="origin?.latitude" [longitude]="origin?.longitude" [zoom]="10">
+		<agm-map [latitude]="origin?.latitude" [longitude]="origin?.longitude" [zoom]="12">
 
-			<agm-marker [latitude]="origin?.latitude" [longitude]="origin?.longitude">
+			<agm-marker [latitude]="origin?.latitude" [longitude]="origin?.longitude" [iconUrl]="myMarker">
 				<agm-info-window>
 					<h4 class="content__map-head">Вы тут!</h4>
 				</agm-info-window>
 			</agm-marker>
 
-			<agm-marker *ngFor='let shop of shops' [latitude]="shop.location.lat" [longitude]="shop.location.lng">
+			<agm-marker *ngFor='let shop of shops' [latitude]="shop.location.lat" [longitude]="shop.location.lng" [iconUrl]="markerUrl(shop)">
 				<agm-info-window [maxWidth]="300">
 					<h4 class="content__map-head">{{shop.name}}</h4>
 					<!-- <div class="content__map-img">
@@ -29,7 +29,10 @@
 		<div class="list-item" *ngFor='let shop of shops'>	
 			<div class="list-item__img" [ngStyle]="{'background': 'url('+shop?.logo+') center / cover'}">
 				<div class="list-item__travel">
-					<div class="list-item__driving" (click)="getRoute(shop)"><i class="material-icons">near_me</i></div>
+					<div class="list-item__driving" (click)="getRoute(shop)">
+						<i class="material-icons">near_me</i>
+						<span>Маршрут</span>
+					</div>
 				</div>
 			</div>	
 			<div class="list-item__text">

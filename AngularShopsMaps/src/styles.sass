@@ -72,6 +72,7 @@ body
 		font-size: 13px
 		line-height: 1.35
 		padding-left: 10px
+		padding-right: 10px
 	.list-item__adress
 		margin-bottom: 0
 		font-size: 14px
@@ -87,12 +88,14 @@ body
 		justify-content: space-around
 		transition: all 0.3s ease
 		border-top: .5px solid #dbdbdb
-		.list-item__driving, .list-item__walking
-			padding: 5px
-			flex: 1 1 auto
+		.list-item__driving
+			width: 100%
+			display: flex
+			padding: 10px
+			justify-content: center
 			transition: all 0.2s ease
 			cursor: pointer
+			align-items: center
 			&:hover
 				background-color: #f9f9f9
-				i
-					color: #1976d2
+				color: #1976d2
